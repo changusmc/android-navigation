@@ -1,0 +1,17 @@
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_android_library")
+
+android_binary(
+    name = "app",
+    manifest = "AndroidManifest.xml",
+    deps = [":library"]
+)
+
+kt_android_library(
+    name = "library",
+    manifest = "AndroidManifest.xml",
+    srcs = glob(["**/*.java", "**/*.kt"]),
+    deps = [
+
+    ],
+    resource_files = glob(["res/**"])
+)
